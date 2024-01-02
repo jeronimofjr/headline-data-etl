@@ -1,8 +1,8 @@
 from etl.extract import Ingestion
 from etl.transform import Transform
 from etl.load import load
-from database.db import DB 
-
+from database.database import Connection
+from logging import INFO, info
 
 def pipeline():
     print("Extração de dados")
@@ -17,8 +17,8 @@ def pipeline():
     print("")
     print("Inserção  dos dados\n")
 
-    bd = DB()
-    bd.connection()
+    bd = Connection()
+    bd.connect()
     
     load(bd, feednews)
 

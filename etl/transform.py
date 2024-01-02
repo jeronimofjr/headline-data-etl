@@ -1,20 +1,20 @@
 from datetime import datetime
 from tqdm import tqdm
 
-
 class Transform:
     def __init__(self, feednews: dict) -> None:
         self.feednews = feednews
-        self.agencias = feednews.keys()
+        self.presses = feednews.keys()
 
-    def transformation(self):
-        for agencia in tqdm(self.agencias):
-            for feed in self.feednews[agencia]:
+    def transform(self) -> dict:
+        for press in tqdm(self.presses):
+            for feed in self.feednews[press]:
                 feed["published"] = (
                     self.format_date(feed["published"])
                     if "published" in feed.keys()
                     else None
                 )
+                feed["press"] = press
         return self.feednews
 
     def format_date(self, string_date: str) -> str:
