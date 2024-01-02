@@ -1,22 +1,24 @@
 from pymongo.mongo_client import MongoClient
 from dotenv import dotenv_values
+from logging import INFO, info, basicConfig, warning, exception
 
 config = dotenv_values(".env")
 
+basicConfig(format="%(asctime)s - %(message)s", datefmt="%d-%b-%y %H:%M:%S", level=INFO)
 
 class DB:
     def __init__(self) -> None:
         self.uri = config["URI"]
         self.client = None
-        self.connect = False
         self.db = None
         self.collection = None
 
-    def connection(self):
+    def connect(self):
         try:
             self.client = MongoClient(self.uri)
-            self.connect = True
             self.db = self.client[config["DATABASE"]]
             self.collection = self.db[config["COLLECTION"]]
+            info("Database conectado")
         except Exception as e:
-            raise "Falha na conexão"
+            exception("Falha na conexão")
+
