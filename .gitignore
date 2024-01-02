@@ -6,4 +6,4 @@ venv/
 
 *teste.py
 
-*.env
+.env
