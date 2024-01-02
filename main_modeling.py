@@ -1,7 +1,7 @@
 from topic_modeling.pre_processing import processing
 from topic_modeling.document_matrix import to_doc_matrix
 from topic_modeling.topic import topic_modeling
-from database.db import DB 
+from database.database import DB 
 from tqdm import tqdm
 
 bd = DB()

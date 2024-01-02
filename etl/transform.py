@@ -1,4 +1,5 @@
 from datetime import datetime
+from logging import info
 from tqdm import tqdm
 
 class Transform:
@@ -7,6 +8,7 @@ class Transform:
         self.presses = feednews.keys()
 
     def transform(self) -> dict:
+        info("Formatação dos dados iniciada!!!")
         for press in tqdm(self.presses):
             for feed in self.feednews[press]:
                 feed["published"] = (

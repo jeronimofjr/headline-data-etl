@@ -1,8 +1,7 @@
-from flask import Flask, render_template, request
-import feedparser
+from feedparser import parse
 from collections import defaultdict
+from logging import info
 from tqdm import tqdm
-
 from enum import Enum
 
 
@@ -21,9 +20,10 @@ class Ingestion:
     def filter(self, news: dict):
         return {att: value for att, value in news.items() if att in self.keys}
 
-    def extract(self):
+    def extract(self) -> dict:
+        info("Extração dos dados iniciada!!!")
         for feed in tqdm(iter(Feed)):
-            list_news = feedparser.parse(feed.value)["entries"]
+            list_news = parse(feed.value)["entries"]
             for news in list_news:
                 self.rss_feeds[feed.name].append(self.filter(news))
         return self.rss_feeds

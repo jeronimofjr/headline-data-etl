@@ -1,10 +1,12 @@
 from pymongo.mongo_client import MongoClient
 from dotenv import dotenv_values
-from logging import INFO, info, basicConfig, warning, exception
+# from logging import INFO, info, basicConfig, exception
+from logging import info, exception
+
 
 config = dotenv_values(".env")
 
-basicConfig(format="%(asctime)s - %(message)s", datefmt="%d-%b-%y %H:%M:%S", level=INFO)
+# basicConfig(format="%(asctime)s - %(message)s", datefmt="%d-%b-%y %H:%M:%S", level=INFO)
 
 class Connection:
     def __init__(self) -> None:
