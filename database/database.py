@@ -13,13 +13,11 @@ class Connection:
         self.uri = config["URI"]
         self.client = None
         self.db = None
-        self.collection = None
 
     def connect(self) -> None:
         try:
             self.client = MongoClient(self.uri)
             self.db = self.client[config["DATABASE"]]
-            self.collection = self.db[config["COLLECTION"]]
             info("Database conectado")
         except Exception as e:
             exception("Falha na conexão")

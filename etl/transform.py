@@ -1,6 +1,7 @@
 from datetime import datetime
 from logging import info
 from tqdm import tqdm
+import pytz
 
 class Transform:
     def __init__(self, feednews: dict) -> None:
@@ -27,3 +28,10 @@ class Transform:
             return formatted_date_string
         except Exception as e:
             return "Invalid Data"
+    
+
+    def take_topics(self, topic_model) -> dict:
+        corpus = [headline["summary"] for news in self.feednews.values() for headline in news if "summary" in headline.keys()]
+        topic = topic_model()
+        topics_list = topic.get_topics(corpus)
+        return {"topics" : topics_list, "date" : datetime.now(pytz.timezone('America/Sao_Paulo')).strftime("%d/%m/%Y %H:%M:%S")}
