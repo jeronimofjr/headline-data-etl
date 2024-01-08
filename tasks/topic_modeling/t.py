@@ -1,0 +1,10 @@
+file = [{ "summary" : "Christian Marriott, 46, had been helping an unconscious woman when the car hit him and others." },
+{  "summary" : "Maine's top election official has ruled Trump cannot run for president next year in the state." },
+{ "summary" : "Israeli tanks reportedly reach the outskirts of Bureij refugee camp as the ground offensive expands." },
+{ "summary" : "We asked three military analysts how they think events may unfold in the coming 12 months." },
+{  "summary" : "Proposals put to the former PM included a detention camp on Mull, newly-released files from 2003 show." },
+{ "summary" : "An increase in antisemitism and Islamophobia is reported by major UK police forces." },
+{  "summary" : "Some properties in the north of Scotland will not be reconnected to the electricity grid until Friday." },
+{ "summary" : "Footage from the cockpit shows the helicopter rocking side to side after being hit by winds of up to 80mph." },
+{ "summary" : "A tree crashed into another woman's bathroom during the tornado near Manchester in Storm Gerrit." },
+{ "summary" : "Emergency services were called to the River Esk in the North York Moors, police say." }]
