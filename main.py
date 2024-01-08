@@ -1,10 +1,9 @@
 from logging import basicConfig, DEBUG, info
-from pipeline import pipeline_data
+from tasks.pipeline import pipeline_data
 
 
 def main():
-
-    basicConfig(filename="log.txt", format="%(asctime)s - %(message)s", datefmt="%d-%b-%y %H:%M:%S", level=DEBUG)
+    basicConfig(filename="logs.txt", format="%(asctime)s - %(message)s", datefmt="%d-%b-%y %H:%M:%S", level=DEBUG)
     info('Started')
     pipeline_data()
     info('Finished')
