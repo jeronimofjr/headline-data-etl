@@ -1,8 +1,8 @@
 from pymongo.mongo_client import MongoClient
-from dotenv import dotenv_values
 from logging import info, exception
-import os
 from dotenv import load_dotenv
+import os
+
 
 load_dotenv()
 
@@ -23,6 +23,5 @@ class Connection:
             info("Database conectado")
         except Exception as e:
             exception("Falha na conexão")
-
 
 

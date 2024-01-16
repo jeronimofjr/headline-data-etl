@@ -1,5 +1,5 @@
 from logging import basicConfig, DEBUG, info
-from tasks.pipeline import pipeline_data
+from dags.pipeline import pipeline_data
 
 
 def main():
